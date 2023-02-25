@@ -1,12 +1,35 @@
 <template>
- <div class="container">
-	<div class="heading">Login</div>
-	<form>
-		<input type="email" placeholder="Email or Phone" class="input">
-		<input type="password" placeholder="Password" class="input">
-		<a href="#" class="forgot-password">Forgot Password?</a>
-		<input type="submit" value="Log In" class="button">
-	</form>
-	<a href="#" class="create-account">Create New Account</a>
-</div>
+  <div>
+    <img src="" alt="" />
+  </div>
+  <div class="flex text-4xl justify-content-center mt-8">
+    <h5>ITxChange</h5>
+  </div>
+  <div class="flex justify-content-center">
+    <Card style="width: 40rem" class="surface-50 border-round-xs">
+      <template #content>
+        <div class="flex flex-column">
+          <h5>Username</h5>
+          <InputText type="text" />
+          <h5>Passwordㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ<a href="forgotpass.vue">Forgot password?</a></h5>
+          <InputText type="text" />
+        </div>
+        <div class="flex flex-column mt-5">
+          <Button label="Submit" class="p-button-rounded" />
+        </div>
+      </template>
+    </Card>
+  </div>
+  <div class="flex justify-content-center mt-4">
+    <Card style="width: 25rem" class="border-round-xs">
+      <template #content>
+        <div class="flex justify-content-center">
+            ㅤ Dont have a Account? 
+            <router-link to="forgotpass/">
+                <span class="ml-2">Create a account</span>
+          </router-link>
+        </div>
+      </template>
+    </Card>
+  </div>
 </template>
