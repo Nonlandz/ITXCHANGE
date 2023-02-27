@@ -1,6 +1,6 @@
 <template>
-   <nav class="navbar navbar-expand-md navbar-dark" >
-    <a class="navbar-brand ml-5 " style="color: black;">ITxChange</a>
+   <nav class="navbar navbar-expand-md navbar-dark mb-8" >
+    <a class="navbar-brand ml-5" style="color: black;">ITxChange</a>
     <button
       class="navbar-toggler"
       type="button"
@@ -18,29 +18,23 @@
           <a class="nav-link ml-1" href="#">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">About</a>
+          <a class="nav-link" href="#">My Fav Post</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Contact</a>
+          <a class="nav-link" href="#">My Post</a>
         </li>
       </ul>
-<div class= "searchbar">
-      <form class="form-inline my-2 my-lg-0 mx-auto">
-        <input
-          class="form-control mr-sm-2"
-          type="search"
-          placeholder="Search"
-          aria-label="Search"
-        />
-      </form>
+      <div class="seachbar mr-8">
+      <Dropdown  v-model="selectedCity2" :options="cities" optionLabel="name" :editable="true"/>
     </div>
-      <div class="search">
-        <button class="btn btn-outline-success " type="submit">
+
+      <div class="search m">
+        <button class="btn btn-outline-primary" type="submit">
           Search
         </button>
       </div>
       <ul class="navbar-nav ml-auto">
-        <li class="nav-item dropdown">
+        <li class="nav-item dropdown mr-6">
           <a
             class="nav-link dropdown-toggle"
             href="#"
@@ -56,19 +50,21 @@
               src="https://cdn.discordapp.com/attachments/883221363316375583/1079743566240301097/blank-profile-picture-973460__340.png"
               class="rounded-circle"
               alt="Profile"
-              style="width: 70px; height: 70px;"
+              style="width: 65px; height: 65px;"
             />
           </a>
           <div
             class="dropdown-menu dropdown-menu-right"
             aria-labelledby="navbarDropdown"
             v-bind:class="{show: isProfileOpen}"
-            style="width: 200px; padding: 10px; margin-top: 5px;"
-          >
-            <a class="dropdown-item" href="#">Profile</a>
-            <div class="dropdown-divider"></div>
+           
+          ><router-link to="/profile">
+            <a class="dropdown-item ">Profile</a>
+          </router-link>
+            
+          <div class="dropdown-divider"></div>
             <router-link to="/">
-            <a class="dropdown-item" href="#">Logout</a>
+            <a class="dropdown-item">Logout</a>
           </router-link>
           </div>
         </li>
@@ -90,7 +86,7 @@ export default {
 
 <style scoped>
 .navbar {
-  background-color: #a5c2e2;
+  background-color: #a4ccdb;
   box-shadow: 0px 0px 10px rgba(158, 246, 6, 0.1);
 }
 .nav-link {
@@ -114,11 +110,6 @@ export default {
 }
 
 .search{
-  margin-right: 200px;
-}
-
-
-.searchbar{
-  margin-right: 20px;
+  margin-right: 250px;
 }
 </style>
