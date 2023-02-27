@@ -53,7 +53,7 @@
             v-on:click.prevent="isProfileOpen = !isProfileOpen"
           >
             <img
-              src="https://cdn.discordapp.com/attachments/642365927454932993/1021710362413912094/petch3.jpg"
+              src="https://cdn.discordapp.com/attachments/883221363316375583/1079743566240301097/blank-profile-picture-973460__340.png"
               class="rounded-circle"
               alt="Profile"
               style="width: 70px; height: 70px;"
