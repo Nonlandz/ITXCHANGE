@@ -13,7 +13,7 @@
             </div>
             <div class="card shadow-lg">
               <div class="card-body p-5">
-                <h1 class="fs-4 card-title fw-bold mb-4">Login</h1>
+                <h1 class="fs-4 card-title fw-bold mb-4 flex justify-content-center">Welcome To ITxChange</h1>
                 <form method="POST" class="needs-validation" novalidate="" autocomplete="off">
                   <div class="mb-3">
                     <label class="mb-2 text-muted" for="email">Username</label>
@@ -64,7 +64,7 @@
                 <div class="text-center">
                   Don't have an Account?
                   <router-link to="forgotpass/">
-                    <span class="ml-2">Create a Now!</span>
+                    <span class="ml-2">Create a Account Now!</span>
                   </router-link>
                 </div>
               </div>
