@@ -11,7 +11,9 @@
         <div class="flex flex-column">
           <h5>Username</h5>
           <InputText type="text" />
-          <h5>Passwordㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ<a href="forgotpass.vue">Forgot password?</a></h5>
+          <h5>Passwordㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ
+            <router-link to="forgotpass/">Forgot password</router-link>
+          </h5>
           <InputText type="text" />
         </div>
         <div class="flex flex-column mt-5">
