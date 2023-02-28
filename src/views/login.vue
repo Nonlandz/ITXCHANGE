@@ -63,7 +63,7 @@
               <div class="card-footer py-3 border-0">
                 <div class="text-center">
                   Don't have an Account?
-                  <router-link to="signup/">
+                  <router-link to="/signup">
                     <span class="ml-2">Create a Account Now!</span>
                   </router-link>
                 </div>

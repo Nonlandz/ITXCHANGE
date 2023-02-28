@@ -61,9 +61,12 @@
             </label>
           </div>
         </div>
+        <router-link to="/home">
         <div class="button">
           <input type="submit" value="Register">
         </div>
+      </router-link>
+      
       </form>
     </div>
   </div>
@@ -85,7 +88,7 @@ body{
   justify-content: center;
   align-items: center;
   padding: 10px;
-  background: linear-gradient(135deg, #d760b7, #4981e8);
+  background: linear-gradient(135deg, #55f685, #4981e8);
 }
 .container{
   max-width: 700px;
@@ -108,7 +111,7 @@ body{
   height: 3px;
   width: 30px;
   border-radius: 5px;
-  background: linear-gradient(135deg, #71b7e6, #9b59b6);
+  background: linear-gradient(135deg, #9e7666, #9b59b6);
 }
 .content form .user-details{
   display: flex;
@@ -138,7 +141,7 @@ form .input-box span.details{
 }
 .user-details .input-box input:focus,
 .user-details .input-box input:valid{
-  border-color: #9b59b6;
+  border-color: #95ca94;
 }
  form .gender-details .gender-title{
   font-size: 20px;
@@ -167,7 +170,7 @@ form .input-box span.details{
  #dot-1:checked ~ .category label .one,
  #dot-2:checked ~ .category label .two,
  #dot-3:checked ~ .category label .three{
-   background: #9b59b6;
+   background: #716bd6;
    border-color: #d9d9d9;
  }
  form input[type="radio"]{
@@ -188,11 +191,11 @@ form .input-box span.details{
    letter-spacing: 1px;
    cursor: pointer;
    transition: all 0.3s ease;
-   background: linear-gradient(135deg, #71b7e6, #9b59b6);
+   background: linear-gradient(135deg, #8599db, #f784ed);
  }
  form .button input:hover{
   /* transform: scale(0.99); */
-  background: linear-gradient(-135deg, #71b7e6, #9b59b6);
+  background: linear-gradient(-135deg, #71b7e6, #2d6aee);
   }
  @media(max-width: 584px){
  .container{
