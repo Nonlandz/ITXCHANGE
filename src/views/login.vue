@@ -7,7 +7,7 @@
        <img src="https://cdn.discordapp.com/attachments/883221363316375583/1079743566240301097/blank-profile-picture-973460__340.png" alt="">
        <div class="text">
          <span class="text-1 text-dark">ITxChange<br> </span>
-         <span class="text-2 text-dark">Let's Change Something New! </span>
+         <span class="text-2 text-dark">Let's ExChange Something New! </span>
        </div>
      </div>
      <div class="back">
