@@ -99,6 +99,9 @@ import TreeTable from 'primevue/treetable';
 import TriStateCheckbox from 'primevue/tristatecheckbox';
 import VirtualScroller from 'primevue/virtualscroller';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import 'primeicons/primeicons.css';
+
+
 
 
 
