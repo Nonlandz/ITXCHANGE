@@ -1,5 +1,5 @@
 <template>
-   <nav class="navbar navbar-expand-md navbar-dark mb-8" >
+   <nav class="navbar navbar-expand-md navbar-dark mb-0" >
     <a class="navbar-brand ml-5" style="color: black;">ITxChange</a>
     <button
       class="navbar-toggler"
