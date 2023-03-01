@@ -3,6 +3,9 @@
   <MyBar/>
   </header>
   
+  
+
+
 </template>
 
 <script setup>
