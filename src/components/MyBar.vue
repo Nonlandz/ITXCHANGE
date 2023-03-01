@@ -59,7 +59,7 @@
             v-bind:class="{show: isProfileOpen}"
            
           ><router-link to="/profile">
-            <a class="dropdown-item ">Profile</a>
+            <a class="dropdown-item ">Edit Profile</a>
           </router-link>
             
           <div class="dropdown-divider"></div>

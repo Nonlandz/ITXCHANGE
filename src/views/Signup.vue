@@ -19,14 +19,7 @@
             <span class="details">Username</span>
             <input type="text" placeholder="Enter your username" required>
           </div>
-          <div class="input-box">
-            <span class="details">Email</span>
-            <input type="text" placeholder="Enter your email" required>
-          </div>
-          <div class="input-box">
-            <span class="details">Phone Number</span>
-            <input type="number" placeholder="Enter your number" required>
-          </div>
+  
           <div class="input-box">
             <span class="details">ID Card</span>
             <input type="number" placeholder="Enter your number" required>
