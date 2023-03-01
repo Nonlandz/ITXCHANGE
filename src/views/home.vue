@@ -20,16 +20,18 @@
     <Button label="add post" class="p-button-rounded bg-primary-200 text-black hover:bg-primary-300 mt-4" />
   </div>
   
+
+  
+
+
+
   </body>
-
-
-
-
-
 </template>
 
 <script setup>
 import MyBar from "../components/MyBar.vue";
+
+
 </script>
 
 <style  scoped>
@@ -40,3 +42,5 @@ body {
 }
 
 </style>
+
+

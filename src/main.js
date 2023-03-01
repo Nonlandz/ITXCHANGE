@@ -100,6 +100,7 @@ import TriStateCheckbox from 'primevue/tristatecheckbox';
 import VirtualScroller from 'primevue/virtualscroller';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'primeicons/primeicons.css';
+// import Dialog from 'primevue/dialog';
 
 
 
@@ -214,6 +215,7 @@ app.component('TreeSelect', TreeSelect);
 app.component('TreeTable', TreeTable);
 app.component('TriStateCheckbox', TriStateCheckbox);
 app.component('VirtualScroller', VirtualScroller);
+// app.component('Dialog', Dialog);
 
 
 
