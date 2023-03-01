@@ -1,6 +1,9 @@
 <script setup>
 import MyBar from "../components/MyBar.vue";
 
+// import Editor from 'primevue/editor';
+
+
 </script>
 
 
@@ -8,5 +11,6 @@ import MyBar from "../components/MyBar.vue";
   <header>
   <MyBar/>
   </header>
+
   
 </template>
