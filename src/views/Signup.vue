@@ -1,14 +1,20 @@
 <template lang="">
 <body>
   <div class="container">
-    <div class="title">Registration</div>
+    <div class="title">Sign Up</div>
     <div class="content">
       <form action="#">
         <div class="user-details">
+
           <div class="input-box">
-            <span class="details">Full Name</span>
-            <input type="text" placeholder="Enter your name" required>
+            <span class="details">Firstname</span>
+            <input type="text" placeholder="Enter your Firstname" required>
           </div>
+          <div class="input-box">
+            <span class="details">Lastname</span>
+            <input type="text" placeholder="Enter your Lastname" required>
+          </div>
+
           <div class="input-box">
             <span class="details">Username</span>
             <input type="text" placeholder="Enter your username" required>
