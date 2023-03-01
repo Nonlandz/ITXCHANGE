@@ -20,8 +20,8 @@
     <Button label="add post" class="p-button-rounded bg-primary-200 text-black hover:bg-primary-300 mt-4" />
   </div>
   
-
   </body>
+
 
 
 
