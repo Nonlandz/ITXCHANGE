@@ -1,4 +1,3 @@
-
 <template>
   <header>
   <MyBar/>
@@ -31,16 +30,13 @@
 
 <script setup>
 import MyBar from "../components/MyBar.vue";
-
-
 </script>
 
 <style  scoped>
+
 body {
   margin: 3%;
 
 }
 
-
 </style>
-
