@@ -24,10 +24,6 @@
             <span class="details">ID Card</span>
             <input type="number" placeholder="Enter your number" required>
           </div>
-          <div class="input-box">
-            <span class="details">Age</span>
-            <input type="number" placeholder="Enter your age" required>
-          </div>
 
 		  <div class="input-box">
             <span class="details"> Password</span>

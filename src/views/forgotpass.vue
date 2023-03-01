@@ -1,6 +1,6 @@
 <template>
     <div>
-      Signup
+      forgotpass
     </div>
   </template>
   

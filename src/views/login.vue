@@ -32,7 +32,9 @@
                <i class="fas fa-lock"></i>
                <input type="password" placeholder="Enter your password" required>
              </div>
+             <router-link to="/forgotpass">
              <div class="text"><a href="#">Forgot password?</a></div>
+            </router-link>
              <router-link to="/home">
              <div class="button input-box">
                <input type="submit" value="Submit">
