@@ -1,4 +1,3 @@
-
 <template>
   <header>
   <MyBar/>
@@ -8,11 +7,7 @@
 
 <script setup>
 import MyBar from "../components/MyBar.vue";
-
-
 </script>
 
 <style  scoped>
-
 </style>
-
