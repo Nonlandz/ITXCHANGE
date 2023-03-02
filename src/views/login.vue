@@ -36,7 +36,7 @@
              <div class="text"><a href="#">Forgot password?</a></div>
             </router-link>
              <router-link to="/home">
-             <div class="button input-box">
+             <div class="button input-box" >
                <input type="submit" value="Submit">
              </div>
            </router-link>
@@ -51,6 +51,29 @@
  </div>
 </body>
 </template>
+
+<!-- <script src="./data.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+<script>
+  methods:{
+    confirm(){
+          if(!this.prename || !this.fname || !this.lname || !this.score){
+            alert("Please enter all inputs")
+          }
+          else{
+            this.students.push({
+              name: this.prename + this.fname + " " +this.lname,
+              score: this.score
+              })
+          }
+    }
+</script> -->
+
+
+
+
+
+
 
 <style  scoped>
 
