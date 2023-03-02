@@ -22,23 +22,19 @@
         </router-link>
     </div> -->
 
-    <!-- <div class="w-7 h-30rem bg-bluegray-200 text-black border-round-xl text-center mt-4" style="margin-left: 20%;">
-      <img src="https://www.primefaces.org/wp-content/uploads/2020/02/primefacesorg-primevue-2020.png" style="height: 10rem width:12rem" class="mt-4" />
-      <img src="https://www.primefaces.org/wp-content/uploads/2020/02/primefacesorg-primevue-2020.png" style="height: 10rem " class="mt-4" />
-      <br>
-      <br>
-      <div class=" bg-cyan-50 text-black border-round-xl text-center field col-10 md:col-4" >
 
-      </div>
-      
-    </div>
-   -->
-
-  
     <facebook-post></facebook-post>
 
 
+
+  
+
   </body>
+
+
+
+
+
 </template>
 
 <script >
@@ -55,6 +51,7 @@ export default {
 };
 
 
+
 </script>
 
 <style  scoped>
@@ -65,5 +62,3 @@ body {
 }
 
 </style>
-
-
