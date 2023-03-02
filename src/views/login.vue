@@ -37,10 +37,8 @@
                   <div class="text"><a href="#">Forgot password?</a></div>
                 </router-link>
                 <div class="button input-box">
-
                   <input type="button" value="Submit" @click="signin()" />
-
-                  
+                </div>
                 <div class="text sign-up-text">
                   Don't have an account?
                   <router-link to="/signup"><label for="flip">Signup now</label> </router-link>

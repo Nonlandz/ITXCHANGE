@@ -96,12 +96,12 @@ export default {
   color: rgb(243, 237, 173);
 }
 .nav-link {
-  color: #333;
+  color: #f1e6e6;
   font-weight: 500;
   margin-right: 20px;
 }
 .nav-link:hover {
-  color: #e9edf2;
+  color: #0a0601;
 }
 .dropdown-menu {
   border: none;
