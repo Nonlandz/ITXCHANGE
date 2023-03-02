@@ -1,6 +1,6 @@
 <template>
    <nav class="navbar navbar-expand-md navbar-dark mb-0" >
-    <a class="navbar-brand ml-5" style="color: black;">ITxChange</a>
+    <a class="navbar-brand ml-5" >ITxChange</a>
     <button
       class="navbar-toggler"
       type="button"
@@ -91,8 +91,9 @@ export default {
 
 <style scoped>
 .navbar {
-  background-color: #a4ccdb;
+  background-color: #1E4F79;
   box-shadow: 0px 0px 10px rgba(158, 246, 6, 0.1);
+  color: rgb(243, 237, 173);
 }
 .nav-link {
   color: #333;
@@ -111,12 +112,13 @@ export default {
   font-weight: 500;
 }
 .dropdown-item:hover {
-  color: #007bff;
+  color: #4c7fb7;
 }
 
 .search{
   margin-right: 250px;
 }
+
 
 
 </style>

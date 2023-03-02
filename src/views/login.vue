@@ -1,25 +1,20 @@
 <template lang="">
   <div class="body">
     <div class="container">
-      <input type="checkbox" id="flip" />
       <div class="cover">
         <div class="front">
           <img
-            src="https://cdn.discordapp.com/attachments/883221363316375583/1079743566240301097/blank-profile-picture-973460__340.png"
-            alt=""
-          />
+            src="https://cdn.discordapp.com/attachments/883221363316375583/1079743566240301097/blank-profile-picture-973460__340.png"/>
           <div class="text">
-            <span class="text-1 text-dark">ITxChange<br /> </span>
+            <span class="text-1 text-dark">ITxChange<br/> </span>
             <span class="text-2 text-dark">Let's Change Something New! </span>
           </div>
         </div>
         <div class="back">
           <!--<img class="backImg" src="images/backImg.jpg" alt="">-->
           <div class="text">
-            <span class="text-1"
-              >Complete miles of journey <br />
-              with one step</span
-            >
+            <span class="text-1">Complete miles of journey <br/>
+              with one step</span>
             <span class="text-2">Let's get started</span>
           </div>
         </div>
@@ -42,8 +37,10 @@
                   <div class="text"><a href="#">Forgot password?</a></div>
                 </router-link>
                 <div class="button input-box">
+
                   <input type="button" value="Submit" @click="signin()" />
-                </div>
+
+                  
                 <div class="text sign-up-text">
                   Don't have an account?
                   <router-link to="/signup"><label for="flip">Signup now</label> </router-link>
