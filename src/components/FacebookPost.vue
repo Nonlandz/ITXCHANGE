@@ -25,6 +25,9 @@
             <div class="col-md-2 text-center justify">
               <div class="post-picture">
                 <img :src="post.pictureUrl" class="img-fluid" alt="Post picture">
+                        <button class="btn btn-link" @click="toggleFavorite(post)">
+              <i class="pi pi-star">{{ post.favorite ? '' : '' }}</i>
+            </button>
              
               </div>
 
@@ -78,6 +81,10 @@ export default {
     this.posts = savedPosts;
   },
   methods: {
+    toggleFavorite(post) {
+    post.favorite = !post.favorite;
+  },
+
     addPost() {
       if (this.newPost.label && this.newPost.content) {
         // Create a new post object with a unique ID
@@ -107,9 +114,9 @@ export default {
           this.newPost.label = '';
           this.newPost.picture = null;
           this.newPost.content = '';
-
-          
         }
+
+        
       }
 
       
