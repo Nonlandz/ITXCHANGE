@@ -1,83 +1,113 @@
-<template lang="">
-<body>
-  <div class="container">
-    <div class="title">Sign Up</div>
-    <div class="content">
-      <form action="#">
-        <div class="user-details">
+<template>
+  <div class="body">
+    <div class="container">
+      <div class="title">Sign Up</div>
+      <div class="content">
+        <form action="#">
+          <div class="user-details">
 
-          <div class="input-box">
-            <span class="details">Firstname</span>
-            <input type="text" placeholder="Enter your Firstname" required>
+            <div class="input-box">
+              <span class="details">Firstname</span>
+              <input type="text" placeholder="Enter your Firstname" v-model="user.fname" required>
+            </div>
+            <div class="input-box">
+              <span class="details">Lastname</span>
+              <input type="text" placeholder="Enter your Lastname" v-model="user.lname" required>
+            </div>
+
+            <div class="input-box">
+              <span class="details">Username</span>
+              <input type="text" placeholder="Enter your username" v-model="user.username" required>
+            </div>
+
+            <div class="input-box">
+              <span class="details">ID Card</span>
+              <input type="number" placeholder="Enter your number" v-model="user.idcard" required>
+            </div>
+
+            <div class="input-box">
+              <span class="details"> Password</span>
+              <input type="password" placeholder="Confirm your password" v-model="user.password" required>
+            </div>
+
+            <div class="input-box">
+              <span class="details">Confirm Password</span>
+              <input type="password" placeholder="Confirm your password" v-model="user.conpass" required>
+            </div>
+
           </div>
-          <div class="input-box">
-            <span class="details">Lastname</span>
-            <input type="text" placeholder="Enter your Lastname" required>
+          <div class="gender-details">
+            <input type="radio" name="gender" id="dot-1" v-model="user.male">
+            <input type="radio" name="gender" id="dot-2" v-model="user.female">
+            <input type="radio" name="gender" id="dot-3" v-model="user.unknow">
+            <span class="gender-title">Gender</span>
+            <div class="category">
+              <label for="dot-1">
+                <span class="dot one"></span>
+                <span class="gender">Male</span>
+              </label>
+              <label for="dot-2">
+                <span class="dot two"></span>
+                <span class="gender">Female</span>
+              </label>
+              <label for="dot-3">
+                <span class="dot three"></span>
+                <span class="gender">Prefer not to say</span>
+              </label>
+            </div>
           </div>
 
-          <div class="input-box">
-            <span class="details">Username</span>
-            <input type="text" placeholder="Enter your username" required>
+          <div class="button">
+            <input @click="register()" value="Register">
           </div>
-  
-          <div class="input-box">
-            <span class="details">ID Card</span>
-            <input type="number" placeholder="Enter your number" required>
-          </div>
-
-		  <div class="input-box">
-            <span class="details"> Password</span>
-            <input type="password" placeholder="Confirm your password" required>
-          </div>
-
-		  <div class="input-box">
-            <span class="details">Confirm Password</span>
-            <input type="password" placeholder="Confirm your password" required>
-          </div>
-
-        </div>
-        <div class="gender-details">
-          <input type="radio" name="gender" id="dot-1">
-          <input type="radio" name="gender" id="dot-2">
-          <input type="radio" name="gender" id="dot-3">
-          <span class="gender-title">Gender</span>
-          <div class="category">
-            <label for="dot-1">
-            <span class="dot one"></span>
-            <span class="gender">Male</span>
-          </label>
-          <label for="dot-2">
-            <span class="dot two"></span>
-            <span class="gender">Female</span>
-          </label>
-          <label for="dot-3">
-            <span class="dot three"></span>
-            <span class="gender">Prefer not to say</span>
-            </label>
-          </div>
-        </div>
-        <router-link to="/home">
-        <div class="button">
-          <input type="submit" value="Register">
-        </div>
-      </router-link>
-      
-      </form>
+        </form>
+      </div>
     </div>
   </div>
-
-</body>
 </template>
+  
+<script>
+
+export default {
+  data() {
+    return {
+      user: {
+        fname: "",
+        lname: "",
+        username: "",
+        idcard: "",
+        password: "",
+        conpass: "",
+        male: "",
+        female: "",
+        unknow: ""
+      }
+    }
+  },
+  methods: {
+    register: function () {
+      localStorage.setItem("user", JSON.stringify(this.user));
+      this.$router.push('/');
+
+    }
+  }
+}
+
+
+</script>
+  
+
+
 
 <style scoped>
-
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Poppins',sans-serif;
+  font-family: 'Poppins', sans-serif;
 }
-body{
+
+.body {
   height: 100vh;
   display: flex;
   justify-content: center;
@@ -85,20 +115,23 @@ body{
   padding: 10px;
   background: linear-gradient(135deg, #55f685, #4981e8);
 }
-.container{
+
+.container {
   max-width: 700px;
   width: 100%;
   background-color: #fff;
   padding: 25px 30px;
   border-radius: 5px;
-  box-shadow: 0 5px 10px rgba(0,0,0,0.15);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
 }
-.container .title{
+
+.container .title {
   font-size: 25px;
   font-weight: 500;
   position: relative;
 }
-.container .title::before{
+
+.container .title::before {
   content: "";
   position: absolute;
   left: 0;
@@ -108,22 +141,26 @@ body{
   border-radius: 5px;
   background: linear-gradient(135deg, #9e7666, #9b59b6);
 }
-.content form .user-details{
+
+.content form .user-details {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   margin: 20px 0 12px 0;
 }
-form .user-details .input-box{
+
+form .user-details .input-box {
   margin-bottom: 15px;
   width: calc(100% / 2 - 20px);
 }
-form .input-box span.details{
+
+form .input-box span.details {
   display: block;
   font-weight: 500;
   margin-bottom: 5px;
 }
-.user-details .input-box input{
+
+.user-details .input-box input {
   height: 45px;
   width: 100%;
   outline: none;
@@ -134,26 +171,31 @@ form .input-box span.details{
   border-bottom-width: 2px;
   transition: all 0.3s ease;
 }
+
 .user-details .input-box input:focus,
-.user-details .input-box input:valid{
+.user-details .input-box input:valid {
   border-color: #95ca94;
 }
- form .gender-details .gender-title{
+
+form .gender-details .gender-title {
   font-size: 20px;
   font-weight: 500;
- }
- form .category{
-   display: flex;
-   width: 80%;
-   margin: 14px 0 ;
-   justify-content: space-between;
- }
- form .category label{
-   display: flex;
-   align-items: center;
-   cursor: pointer;
- }
- form .category label .dot{
+}
+
+form .category {
+  display: flex;
+  width: 80%;
+  margin: 14px 0;
+  justify-content: space-between;
+}
+
+form .category label {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+form .category label .dot {
   height: 18px;
   width: 18px;
   border-radius: 50%;
@@ -162,59 +204,70 @@ form .input-box span.details{
   border: 5px solid transparent;
   transition: all 0.3s ease;
 }
- #dot-1:checked ~ .category label .one,
- #dot-2:checked ~ .category label .two,
- #dot-3:checked ~ .category label .three{
-   background: #716bd6;
-   border-color: #d9d9d9;
- }
- form input[type="radio"]{
-   display: none;
- }
- form .button{
-   height: 45px;
-   margin: 35px 0
- }
- form .button input{
-   height: 100%;
-   width: 100%;
-   border-radius: 5px;
-   border: none;
-   color: #fff;
-   font-size: 18px;
-   font-weight: 500;
-   letter-spacing: 1px;
-   cursor: pointer;
-   transition: all 0.3s ease;
-   background: linear-gradient(135deg, #8599db, #f784ed);
- }
- form .button input:hover{
+
+#dot-1:checked~.category label .one,
+#dot-2:checked~.category label .two,
+#dot-3:checked~.category label .three {
+  background: #716bd6;
+  border-color: #d9d9d9;
+}
+
+form input[type="radio"] {
+  display: none;
+}
+
+form .button {
+  height: 45px;
+  margin: 35px 0
+}
+
+form .button input {
+  height: 100%;
+  width: 100%;
+  border-radius: 5px;
+  border: none;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background: linear-gradient(135deg, #8599db, #f784ed);
+}
+
+form .button input:hover {
   /* transform: scale(0.99); */
   background: linear-gradient(-135deg, #71b7e6, #2d6aee);
-  }
- @media(max-width: 584px){
- .container{
-  max-width: 100%;
 }
-form .user-details .input-box{
+
+@media(max-width: 584px) {
+  .container {
+    max-width: 100%;
+  }
+
+  form .user-details .input-box {
     margin-bottom: 15px;
     width: 100%;
   }
-  form .category{
+
+  form .category {
     width: 100%;
   }
-  .content form .user-details{
+
+  .content form .user-details {
     max-height: 300px;
     overflow-y: scroll;
   }
-  .user-details::-webkit-scrollbar{
+
+  .user-details::-webkit-scrollbar {
     width: 5px;
-  }
-  }
-  @media(max-width: 459px){
-  .container .content .category{
-    flex-direction: column;
   }
 }
 
+@media(max-width: 459px) {
+  .container .content .category {
+    flex-direction: column;
+  }
+}
 </style>
+  
