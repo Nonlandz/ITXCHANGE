@@ -56,7 +56,7 @@
               </label>
             </div>
           </div>
-
+          
           <div class="button">
             <input @click="register()" value="Register">
           </div>

@@ -42,7 +42,7 @@
                   <div class="text"><a href="#">Forgot password?</a></div>
                 </router-link>
                 <div class="button input-box">
-                  <input type="submit" value="Submit" @click="signin()" />
+                  <input type="button" value="Submit" @click="signin()" />
                 </div>
                 <div class="text sign-up-text">
                   Don't have an account?
@@ -57,22 +57,7 @@
   </div>
 </template>
 
-<!-- <script src="./data.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
-<script>
-  methods:{
-    confirm(){
-          if(!this.prename || !this.fname || !this.lname || !this.score){
-            alert("Please enter all inputs")
-          }
-          else{
-            this.students.push({
-              name: this.prename + this.fname + " " +this.lname,
-              score: this.score
-              })
-          }
-    }
-</script> -->
+
 
 <script>
 export default {
@@ -89,14 +74,18 @@ export default {
   },
   methods: {
     signin: function () {
-      console.log('sa')
+console.log("dddd")
+      if (this.username != this.user.username) {
+        alert("กรอกข้อมูลไม่ถูกต้อง")
+      }
+      if (this.password != this.user.password) {
+        alert("กรอกข้อมูลไม่ถูกต้อง")
+      }
 
-      // if (this.username != "user.username") {
-      //   alert("asdsad")
-      // }
-      // if (this.password == "user.password") {
-      //   alert("asdsad")
-      // }
+      else if(this.username == this.user.username && this.password == this.user.password ){
+        this.$router.push('/home');
+      }
+
     }
   }
 }
