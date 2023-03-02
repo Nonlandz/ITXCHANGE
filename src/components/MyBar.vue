@@ -16,14 +16,16 @@
       <ul class="navbar-nav mr-auto">
         <li class="nav-item">
           <router-link to="/home">
-          <a class="nav-link ml-1" href="#">Home</a>
+          <a class="nav-link ml-1" >Home</a>
         </router-link>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">My Fav Post</a>
+          <router-link to="/favpost">
+          <a class="nav-link" >My Fav Post</a>
+        </router-link>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">My Post</a>
+          <a class="nav-link" >My Post</a>
         </li>
       </ul>
       <span class="p-input-icon-left">

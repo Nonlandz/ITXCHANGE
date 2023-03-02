@@ -25,12 +25,18 @@
             <div class="col-md-2 text-center justify">
               <div class="post-picture">
                 <img :src="post.pictureUrl" class="img-fluid" alt="Post picture">
-                        <button class="btn btn-link" @click="toggleFavorite(post)">
-              <i class="pi pi-star">{{ post.favorite ? '' : '' }}</i>
-            </button>
-             
-              </div>
+        <div @click="post.is_favorite = !post.is_favorite" class="icon is-size-4">
 
+          <span v-if="post.is_favorite" class="icon" key="true">
+             favourite <i class="fas fa-star has-text-warning"></i>
+          </span>
+           
+          <span v-else key="false">
+        <i class="far fa-star has-text-warning"></i>
+          </span>
+
+        </div>
+  </div>
               <div class="comment-section">
                 <ul>
                   <li v-for="(comment, index) in post.comments" :key="index">
@@ -39,7 +45,7 @@
                 </ul>
                 <form class="comment-form" @submit.prevent="addComment(post)">
                   <div class="form-group">
-                    <label for="comment-content">Add a comment:</label>
+                    <label for="comment-content">Add a Comment:</label>
                     <textarea class="form-control" id="comment-content" v-model="newComment" required></textarea>
                   </div>
                   <div class="text-center">
