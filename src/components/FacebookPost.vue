@@ -1,21 +1,21 @@
 <template>
   <div class="container">
     <form class="post-form" @submit.prevent="addPost">
-      <h2 class="text-center mb-4">Create a new post</h2>
+      <h2 class="text-center mb-5">Create a new post</h2>
       <div class="form-group">
         <label for="post-label">ชื่ออุปกรณ์:</label>
         <input type="text" class="form-control" id="post-label" v-model="newPost.label" required>
       </div>
-      <div class="form-group mt-3">
+      <div class="form-group mt-5">
         <label for="post-picture">รูปอุปกรณ์:</label>
-        <input type="file" class="custom-file-input" id="post-picture" accept="image/*" @change="onPictureSelected">
+        <input type="file" class="form-control" id="post-picture" accept="image/*" @change="onPictureSelected">
       </div>
-      <div class="form-group mt-3">
+      <div class="form-group mt-5">
         <label for="post-content">รายละเอียดอุปกรณ์:</label>
         <textarea class="form-control" id="post-content" v-model="newPost.content" required></textarea>
       </div>
       <div class="text-center">
-        <button type="submit" class="btn btn-primary">Post</button>
+        <Button type ="submit" label="Post" icon="pi pi-check" class="p-button mt-2"  />
       </div>
     </form>
     <div class="post-list">

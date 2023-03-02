@@ -26,12 +26,13 @@
           <a class="nav-link" href="#">My Post</a>
         </li>
       </ul>
-      <div class="seachbar mr-8">
-      <Dropdown  v-model="selectedCity2" :options="cities" optionLabel="name" :editable="true"/>
-    </div>
+      <span class="p-input-icon-left">
+            <i class="pi pi-search" />
+            <InputText type="text" v-model="value3" placeholder="Search" />
+        </span>
 
-      <div class="search m">
-        <button class="btn btn-outline-primary" type="submit">
+      <div class="search ">
+        <button class="btn btn-outline-primary ml-4" type="submit">
           Search
         </button>
       </div>
@@ -114,4 +115,6 @@ export default {
 .search{
   margin-right: 250px;
 }
+
+
 </style>
