@@ -57,8 +57,10 @@ export default {
 <style  scoped>
 
 body {
-  margin: 3%;
-
+  padding: 3%;
+  background-color: rgb(211, 232, 232);
 }
+
+
 
 </style>

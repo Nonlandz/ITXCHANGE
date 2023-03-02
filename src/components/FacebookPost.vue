@@ -3,15 +3,15 @@
     <form class="post-form" @submit.prevent="addPost">
       <h2 class="text-center mb-4">Create a new post</h2>
       <div class="form-group">
-        <label for="post-label">Label:</label>
+        <label for="post-label">ชื่ออุปกรณ์:</label>
         <input type="text" class="form-control" id="post-label" v-model="newPost.label" required>
       </div>
       <div class="form-group mt-3">
-        <label for="post-picture">Picture:</label>
+        <label for="post-picture">รูปอุปกรณ์:</label>
         <input type="file" class="custom-file-input" id="post-picture" accept="image/*" @change="onPictureSelected">
       </div>
       <div class="form-group mt-3">
-        <label for="post-content">Content:</label>
+        <label for="post-content">รายละเอียดอุปกรณ์:</label>
         <textarea class="form-control" id="post-content" v-model="newPost.content" required></textarea>
       </div>
       <div class="text-center">
@@ -25,10 +25,10 @@
             <div class="col-md-2 text-center justify">
               <div class="post-picture">
                 <img :src="post.pictureUrl" class="img-fluid" alt="Post picture">
+             
               </div>
 
               <div class="comment-section">
-                <h6>Comments:</h6>
                 <ul>
                   <li v-for="(comment, index) in post.comments" :key="index">
                     {{ comment }}
@@ -41,13 +41,15 @@
                   </div>
                   <div class="text-center">
                     <button type="submit" class="btn btn-primary">Comment</button>
+                    
                   </div>
                 </form>
               </div>
             </div>
             <div class="col-md-10">
-              <h5 class="card-title">{{ post.label }}</h5>
-              <p class="card-text">{{ post.content }}</p>
+              <h5 class="card-title">  ชื่ออุปกรณ์:  {{ post.label }}</h5>
+              <p class="card-text">รายละเอียดอุปกรณ์: {{ post.content }}</p>
+              <button class="btn btn-danger " @click="deletePost(index)">Delete</button>
             </div>
           </div>
         </div>
@@ -105,17 +107,26 @@ export default {
           this.newPost.label = '';
           this.newPost.picture = null;
           this.newPost.content = '';
+
+          
         }
       }
+
+      
     },
+    deletePost(index) {
+    this.posts.splice(index, 1);
+    localStorage.setItem('posts', JSON.stringify(this.posts));
+  },
+
     onPictureSelected(event) {
       this.newPost.picture = event.target.files[0];
     },
     addComment(post) {
       if (this.newComment.trim()) {
         const comment = {
-          id: Date.now(),
-          content: this.newComment.trim(),
+          // id: Date.now(),
+          User: this.newComment.trim(),
         };
         post.comments.push(comment);
         localStorage.setItem('posts', JSON.stringify(this.posts));
@@ -183,5 +194,6 @@ export default {
 .custom-file-label {
   color: #495057;
 }
+
 
 </style>
