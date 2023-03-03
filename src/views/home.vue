@@ -6,15 +6,15 @@
 
   <body>
     <div class="justify-content-center text-center " >
-      <Button label="Headphone" class="p-button-rounded bg-bluegray-200 text-black hover:bg-bluegray-400  mr-5 mb-4" />
-      <Button label="Mouse" class="p-button-rounded bg-bluegray-200 text-black hover:bg-bluegray-400 mr-5 mb-4" />
-      <Button label="Keyboard" class="p-button-rounded bg-bluegray-200 text-black hover:bg-bluegray-400 mr-5 mb-4" />
-      <Button label="Monitor" class="p-button-rounded bg-bluegray-200 text-black hover:bg-bluegray-400 mr-5 mb-4" />
-      <Button label="Printer" class="p-button-rounded bg-bluegray-200 text-black hover:bg-bluegray-400 mr-5 mb-4" />
-      <Button label="Smartphone" class="p-button-rounded bg-bluegray-200 text-black hover:bg-bluegray-400 mr-5 mb-4" />
-      <Button label="Ipad" class="p-button-rounded bg-bluegray-200 text-black hover:bg-bluegray-400 mr-5 mb-4" />
-      <Button label="Notebook" class="p-button-rounded bg-bluegray-200 text-black hover:bg-bluegray-400 mr-5 mb-4" />
-      <Button label="Other" class="p-button-rounded bg-bluegray-200 text-black hover:bg-bluegray-400 mr-5 mb-4" />
+      <Button label="Headphone" class="p-button-rounded bg-orange-100 text-black hover:bg-bluegray-400  mr-5 mb-4" />
+      <Button label="Mouse" class="p-button-rounded bg-orange-100 text-black hover:bg-bluegray-400 mr-5 mb-4" />
+      <Button label="Keyboard" class="p-button-rounded bg-orange-100 text-black hover:bg-bluegray-400 mr-5 mb-4" />
+      <Button label="Monitor" class="p-button-rounded bg-orange-100 text-black hover:bg-bluegray-400 mr-5 mb-4" />
+      <Button label="Printer" class="p-button-rounded bg-orange-100 text-black hover:bg-bluegray-400 mr-5 mb-4" />
+      <Button label="Smartphone" class="p-button-rounded bg-orange-100 text-black hover:bg-bluegray-400 mr-5 mb-4" />
+      <Button label="Ipad" class="p-button-rounded bg-orange-100 text-black hover:bg-bluegray-400 mr-5 mb-4" />
+      <Button label="Notebook" class="p-button-rounded bg-orange-100 text-black hover:bg-bluegray-400 mr-5 mb-4" />
+      <Button label="Other" class="p-button-rounded bg-orange-100 text-black hover:bg-bluegray-400 mr-5 mb-4" />
     </div>
     <!-- <div class="w-8 h-6rem bg-bluegray-200 text-black border-round-xl text-center mt-4" style="margin-left: 16%;">
         <router-link to="/addpost">
