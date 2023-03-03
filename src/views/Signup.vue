@@ -113,7 +113,7 @@ export default {
   justify-content: center;
   align-items: center;
   padding: 10px;
-  background: linear-gradient(135deg, #55f685, #4981e8);
+  background: linear-gradient(135deg, #EB6648, #18191a);
 }
 
 .container {
@@ -232,7 +232,8 @@ form .button input {
   letter-spacing: 1px;
   cursor: pointer;
   transition: all 0.3s ease;
-  background: linear-gradient(135deg, #8599db, #f784ed);
+  text-align: center;
+  background: linear-gradient(135deg, #24325e, #f4cfb7ef);
 }
 
 form .button input:hover {
