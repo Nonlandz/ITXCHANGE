@@ -60,6 +60,11 @@
           <div class="button">
             <input @click="register()" value="Register">
           </div>
+          
+          <div class="text sign-up-text">
+                  Already have an account?
+                  <router-link to="/"><label for="flip">Login now</label> </router-link>
+                </div>
         </form>
       </div>
     </div>
