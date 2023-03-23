@@ -1,60 +1,56 @@
 <template>
   <div class="container">
-    <div class="row">
-      <div class="col-md-6 mx-auto">
-        <div class="card mt-5">
-          <div class="card-header">
-            <h3 class="text-center">Reset Password</h3>
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <h2 class="text-center">Forgot Password</h2>
+        <form @submit.prevent="submitForm">
+          <div class="form-group">
+            <label for="username">Username:</label>
+            <input type="text" class="form-control" id="username" v-model="username" required>
           </div>
-          <div class="card-body">
-            <form @submit.prevent="resetPassword">
-              <div class="form-group">
-                <label for="username">Username</label>
-                <input type="text" class="form-control" id="username" v-model="username" required>
-              </div>
-              <div class="form-group">
-                <label for="newPassword">New Password</label>
-                <input type="password" class="form-control" id="newPassword" v-model="newPassword" required>
-              </div>
-              <div class="form-group">
-                <label for="confirmPassword">Confirm Password</label>
-                <input type="password" class="form-control" id="confirmPassword" v-model="confirmPassword" required>
-              </div>
-              <div class="text-center">
-                <button type="submit" class="btn btn-primary">Submit</button>
-              </div>
-            </form>
-            <p class="mt-3 text-center">{{ message }}</p>
+          <div class="form-group">
+            <label for="password">New Password:</label>
+            <input type="password" class="form-control" id="password" v-model="password" required>
           </div>
-        </div>
+          <div class="form-group">
+            <label for="confirm-password">Confirm New Password:</label>
+            <input type="password" class="form-control" id="confirm-password" v-model="confirmPassword" required>
+            <span v-if="!passwordsMatch" class="text-danger">Passwords do not match.</span>
+          </div>
+          <button type="submit" class="btn btn-primary btn-block" :disabled="!formValid">Submit</button>
+        </form>
       </div>
     </div>
   </div>
 </template>
-
 
 <script>
 export default {
   data() {
     return {
       username: '',
-      newPassword: '',
-      confirmPassword: '',
-      message: ''
+      password: '',
+      confirmPassword: ''
+    }
+  },
+  computed: {
+    passwordsMatch() {
+      return this.password === this.confirmPassword;
+    },
+    formValid() {
+      return this.username && this.password && this.confirmPassword && this.passwordsMatch;
     }
   },
   methods: {
-    resetPassword() {
-      const storedUsername = localStorage.getItem('username');
-      if (this.username === storedUsername) {
-        if (this.newPassword === this.confirmPassword) {
-          localStorage.setItem('password', this.newPassword);
-          this.message = 'Password changed successfully!';
-        } else {
-          this.message = 'New password and confirm password do not match.';
-        }
+    submitForm() {
+      const user = JSON.parse(localStorage.getItem('user'));
+      if (user && user.username === this.username) {
+        user.password = this.password;
+        localStorage.setItem('user', JSON.stringify(user));
+        alert('Password updated successfully.');
+        this.$router.push('/');
       } else {
-        this.message = 'Username does not match.';
+        alert('Username not found.');
       }
     }
   }
