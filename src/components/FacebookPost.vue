@@ -1,43 +1,67 @@
 <template>
   <div class="container">
-    <form class="post-form" @submit.prevent="addPost">
-      <h2 class="text-center mb-5">Create a new post</h2>
-      <div class="form-group">
-        <label for="post-label">ชื่ออุปกรณ์:</label>
-        <input type="text" class="form-control" id="post-label" v-model="newPost.label" required>
+    <div class="d-flex justify-content-center my-3">
+      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#createPostModal">
+        Create a new post
+      </button>
+    </div>
+
+    <div class="modal fade" id="createPostModal" tabindex="-1" role="dialog" aria-labelledby="createPostModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="createPostModalLabel">Create a new post</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form class="post-form" @submit.prevent="addPost">
+              <div class="form-group">
+                <label for="post-label">ชื่ออุปกรณ์:</label>
+                <input type="text" class="form-control" id="post-label" v-model="newPost.label" required>
+              </div>
+              <div class="form-group mt-3">
+                <label for="post-picture">รูปอุปกรณ์:</label>
+                <input type="file" class="form-control" id="post-picture" accept="image/*" @change="onPictureSelected">
+              </div>
+              <div class="form-group mt-3">
+                <label for="post-content">รายละเอียดอุปกรณ์:</label>
+                <textarea class="form-control" id="post-content" v-model="newPost.content" required></textarea>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="submit" class="btn btn-primary">Post</button>
+              </div>
+            </form>
+          </div>
+        </div>
       </div>
-      <div class="form-group mt-5">
-        <label for="post-picture">รูปอุปกรณ์:</label>
-        <input type="file" class="form-control" id="post-picture" accept="image/*" @change="onPictureSelected">
-      </div>
-      <div class="form-group mt-5">
-        <label for="post-content">รายละเอียดอุปกรณ์:</label>
-        <textarea class="form-control" id="post-content" v-model="newPost.content" required></textarea>
-      </div>
-      <div class="text-center">
-        <Button type ="submit" label="Post" icon="pi pi-check" class="p-button mt-2"  />
-      </div>
-    </form>
+    </div>
+
     <div class="post-list">
       <div v-for="(post, index) in posts" :key="index" class="post card mb-3">
         <div class="card-body">
           <div class="row">
-            <div class="col-md-2 text-center justify">
+            <div class="col-md-2 text-center">
               <div class="post-picture">
                 <img :src="post.pictureUrl" class="img-fluid" alt="Post picture">
-        <div @click="post.is_favorite = !post.is_favorite" class="icon is-size-4">
-
-          <span v-if="post.is_favorite" class="icon" key="true">
-             favourite <i class="fas fa-star has-text-warning"></i>
-          </span>
-           
-          <span v-else key="false">
-        <i class="far fa-star has-text-warning"></i>
-          </span>
-
-        </div>
-  </div>
-              <div class="comment-section">
+                <div @click="post.is_favorite = !post.is_favorite" class="icon is-size-4 mt-2">
+                  <span v-if="post.is_favorite" class="icon" key="true">
+                    <i class="fas fa-star has-text-warning"></i>
+                  </span>
+                  <span v-else key="false">
+                    <i class="far fa-star has-text-warning"></i>
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-10">
+              <h5 class="card-title">ชื่ออุปกรณ์: {{ post.label }}</h5>
+              <p class="card-text">รายละเอียดอุปกรณ์: {{ post.content }}</p>
+              <button class="btn btn-danger" @click="deletePost(index)">Delete</button>
+              
+              <div class="comment-section mt-3">
                 <ul>
                   <li v-for="(comment, index) in post.comments" :key="index">
                     {{ comment }}
@@ -50,15 +74,9 @@
                   </div>
                   <div class="text-center">
                     <button type="submit" class="btn btn-primary">Comment</button>
-                    
                   </div>
                 </form>
               </div>
-            </div>
-            <div class="col-md-10">
-              <h5 class="card-title">  ชื่ออุปกรณ์:  {{ post.label }}</h5>
-              <p class="card-text">รายละเอียดอุปกรณ์: {{ post.content }}</p>
-              <button class="btn btn-danger " @click="deletePost(index)">Delete</button>
             </div>
           </div>
         </div>
@@ -66,6 +84,9 @@
     </div>
   </div>
 </template>
+
+
+
 
 
 <script>
