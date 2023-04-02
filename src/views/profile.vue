@@ -269,5 +269,4 @@ body {
 
 <script setup>
 import MyBar from "../components/MyBar.vue";
-
 </script>
