@@ -1,120 +1,138 @@
 <template>
-  <nav class="navbar navbar-expand-md navbar-dark mb-0" >
-   <a class="navbar-brand ml-5" >ITxChange</a>
-   <button
-     class="navbar-toggler"
-     type="button"
-     data-toggle="collapse"
-     data-target="#navbarNav"
-     aria-controls="navbarNav"
-     aria-expanded="false"
-     aria-label="Toggle navigation"
-   >
-     <span class="navbar-toggler-icon"></span>
-   </button>
-   <div class="collapse navbar-collapse" id="navbarNav">
-     <ul class="navbar-nav mr-auto">
-       <li class="nav-item">
-         <router-link to="/home">
-         <a class="nav-link ml-1" >Home</a>
-       </router-link>
-       </li>
-       <li class="nav-item">
-         <router-link to="/favpost">
-         <a class="nav-link" >My Fav Post</a>
-       </router-link>
-       </li>
-       <li class="nav-item">
-         <a class="nav-link" >My Post</a>
-       </li>
-     </ul>
-     <span class="p-input-icon-left">
-           <i class="pi pi-search" />
-           <InputText type="text" v-model="value3" placeholder="Search" />
-       </span>
+  <nav class="navbar navbar-expand-md navbar-dark mb-0">
+    <a class="navbar-brand ml-5">ITxChange</a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-toggle="collapse"
+      data-target="#navbarNav"
+      aria-controls="navbarNav"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <router-link to="/home">
+            <a class="nav-link ml-1">Home</a>
+          </router-link>
+        </li>
+        <li class="nav-item">
+          <router-link to="/favpost">
+            <a class="nav-link">My Fav Post</a>
+          </router-link>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link">My Post</a>
+        </li>
+      </ul>
+      <span class="p-input-icon-left">
+        <i class="pi pi-search" />
+        <InputText type="text" v-model="value3" placeholder="Search" />
+      </span>
 
-     <div class="search ">
-       <button class="btn btn-outline-primary ml-4" type="submit">
-         Search
-       </button>
-     </div>
-     <ul class="navbar-nav ml-auto">
-       <li class="nav-item dropdown mr-6">
-         <a
-           class="nav-link dropdown-toggle"
-           href="#"
-           id="navbarDropdown"
-           role="button"
-           data-toggle="dropdown"
-           aria-haspopup="true"
-           aria-expanded="false"
-           v-bind:class="{active: isProfileOpen}"
-           v-on:click.prevent="isProfileOpen = !isProfileOpen"
-         >
-           <img
-             src="https://cdn.discordapp.com/attachments/883221363316375583/1079743566240301097/blank-profile-picture-973460__340.png"
-             class="rounded-circle"
-             alt="Profile"
-             style="width: 65px; height: 65px;"
-           />
-         </a>
-         <div
-           class="dropdown-menu dropdown-menu-right"
-           aria-labelledby="navbarDropdown"
-           v-bind:class="{show: isProfileOpen}"
-          
-         ><router-link to="/profile">
-           <a class="dropdown-item ">Edit Profile</a>
-         </router-link>
-           
-         <div class="dropdown-divider"></div>
-           <router-link to="/">
-           <a class="dropdown-item">Logout</a>
-         </router-link>
-         </div>
-       </li>
-     </ul>
-   </div>
- </nav>
+      <div class="search">
+        <button class="btn btn-outline-primary ml-4" type="submit">Search</button>
+      </div>
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item dropdown mr-6">
+          <a
+            class="nav-link dropdown-toggle"
+            href="#"
+            id="navbarDropdown"
+            role="button"
+            data-toggle="dropdown"
+            aria-haspopup="true"
+            aria-expanded="false"
+            v-bind:class="{ active: isProfileOpen }"
+            v-on:click.prevent="isProfileOpen = !isProfileOpen"
+          >
+            <img
+              :src="profileImage"
+              class="rounded-circle"
+              alt="Profile"
+              style="width: 65px; height: 65px"
+            />
+          </a>
+          <div
+            class="dropdown-menu dropdown-menu-right"
+            aria-labelledby="navbarDropdown"
+            v-bind:class="{ show: isProfileOpen }"
+          >
+            <router-link to="/profile">
+              <a class="dropdown-item">Edit Profile</a>
+            </router-link>
+
+            <div class="dropdown-divider"></div>
+            <router-link to="/">
+              <a class="dropdown-item">Logout</a>
+            </router-link>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </nav>
 </template>
 
 <script>
 export default {
- name: "Navbar",
- data() {
-   return {
-     isProfileOpen: false,
-   };
- },
+  name: 'Mybar',
+  methods: {
+    updateProfileImage(newImageURL) {
+      this.profileImage = newImageURL
+    }
+  },
+  data() {
+    return {
+      isProfileOpen: false,
+      profileImageUrl:
+        'https://cdn.discordapp.com/attachments/883221363316375583/1079743566240301097/blank-profile-picture-973460__340.png'
+    }
+  },
+ // Add this method inside the Navbar component's script
+beforeCreate() {
+  const storedImage = localStorage.getItem("profileImage");
+  if (storedImage) {
+    this.profileImage = storedImage;
+  }
+},
+
 };
 </script>
 
 <style scoped>
 .navbar {
- background-color: #1E4F79;
- box-shadow: 0px 0px 10px rgba(158, 246, 6, 0.1);
- color: rgb(243, 237, 173);
+  background-color: #1e4f79;
+  box-shadow: 0px 0px 10px rgba(158, 246, 6, 0.1);
+  color: rgb(243, 237, 173);
 }
 .nav-link {
- color: #f1e6e6;
- font-weight: 500;
- margin-right: 20px;
+  color: #f1e6e6;
+  font-weight: 500;
+  margin-right: 20px;
 }
 .nav-link:hover {
- color: #0a0601;
+  color: #0a0601;
 }
 .dropdown-menu {
- border: none;
- box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  border: none;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
 }
 .dropdown-item {
- color: #333;
- font-weight: 500;
+  color: #333;
+  font-weight: 500;
 }
 .dropdown-item:hover {
- color: #4c7fb7;
+  color: #4c7fb7;
 }
-.search{
- margin-right: 250px;
+.search {
+  margin-right: 250px;
+}
+.profile-image {
+  position: absolute;
+  top: 8px;
+  right: 90px;
 }
 </style>
